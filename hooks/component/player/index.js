@@ -1,10 +1,11 @@
+import { UserSquare } from "lucide-react";
 import ReactPlayer from "react-player";
 
 const Player = (props) => {
 
-const{playerID,url,muted,playing}=props
+const{url,muted,playing,width,height,isActive}=props
     return (<div>
-<ReactPlayer key={playerID} url={url} muted={muted} playing={playing} onError={(e) => console.log('Error playing video:', e)}/>
+{playing?<ReactPlayer width={width} height={height} url={url} muted={muted} playing={playing} onError={(e) => console.log('Error playing video:', e)}/>:<UserSquare size={isActive?150:400}/>}
     </div>)
 }
 export default Player;
