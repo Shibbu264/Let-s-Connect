@@ -1,5 +1,5 @@
 import cx from "classnames";
-import { Mic, Video, PhoneOff, MicOff, VideoOff } from "lucide-react";
+import { Mic, Video, PhoneOff, MicOff, VideoOff, CopyIcon } from "lucide-react";
 
 import styles from "./index.module.css";
 
@@ -27,6 +27,7 @@ const Bottom = (props) => {
         />
       )}
       <PhoneOff size={55} className={cx(styles.icon)} onClick={leaveRoom}/>
+      <CopyIcon size={55} className={cx(styles.icon)}  onClick={()=>{  navigator.clipboard.writeText(window.location.href)}}/>
     </div>
   );
 };
