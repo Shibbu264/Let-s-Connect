@@ -24,6 +24,7 @@ const usePeer = () => {
                     path: 'peerjs/myapp',
                 });
                 setPeer(myPeer)
+                console.log(myPeer)
                 myPeer.on('open', (id) => {
                     socket?.emit('join-room', roomId, id)
                     setMyId(id)

@@ -129,13 +129,13 @@ export default function Room() {
     return (
         <>
             <h1 className="text-center my-6 font-bold 3xl">Welcome to the Meet Bro !</h1>
-            <div className="absolute bottom-0  flex flex-col items-center border-2 border-blue-300  right-16 sm:w-[240px] sm:h-[180px] mb-8">
+            <div className="absolute sm:bottom-0  flex flex-col items-center border-2 border-blue-300 right-4 bottom-10 sm:right-16 w-[120px] h-[90px] sm:w-[240px] sm:h-[180px] mb-8">
                 {playerHighlighted && <Player isActive={true} width={'100%'} height={'100%'} url={playerHighlighted.url} muted={playerHighlighted.muted} playing={playerHighlighted.playing} />}
             </div>
             <div className="flex">
                 {Object.keys(nonHighlighted).map((playerID) => {
                     const { url, muted, playing } = nonHighlighted[playerID]
-                    return <div key={playerID} className="ml-6 flex flex-col items-center w-[80%] h-[96px]">  <Player isActive={false} width={'100%'} height={'100%'} key={playerID} url={url} muted={muted} playing={playing} />
+                    return <div key={playerID} className="ml-6 flex flex-col items-center w-screen h-[80%] sm:w-[80%] sm:h-[96px]">  <Player isActive={false} width={'100%'} height={'100%'} key={playerID} url={url} muted={muted} playing={playing} />
                         <div className="flex gap-6" >{muted ? <MicOff style={{ background: "white", color: "red" }} size={30} /> : <Mic style={{ background: "white", color: "red" }} size={30} />}
                             {playing ? <Video style={{ background: "white", color: "red" }} size={30} />:<VideoOff size={30} style={{ background: "white", color: "red" }} /> }
                         </div>
