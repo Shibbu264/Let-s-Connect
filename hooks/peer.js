@@ -17,12 +17,6 @@ const usePeer = () => {
         if (peerset.current || !roomId || !socket) return;
         peerset.current = true;
 
-
-
-
-        if (typeof window !== undefined) {
-
-
             import("peerjs").then(({ default: Peer }) => {
                 // normal synchronous code
                 const myPeer = new Peer({
@@ -37,11 +31,6 @@ const usePeer = () => {
                 })
 
             })
-
-
-
-
-        }
 
     }, [roomId, socket])
 
