@@ -22,8 +22,8 @@ useEffect(()=>{
    
         if(window !== undefined){
 const myPeer = new Peer({
-    host: 'localhost',
-    port: 5000,
+    host: process.env.NEXT_PUBLIC_HOST,
+    port: process.env.NEXT_PUBLIC_PORT,
     path: 'peerjs/myapp',
   });
 setPeer(myPeer)
