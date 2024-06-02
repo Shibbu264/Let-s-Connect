@@ -3,11 +3,20 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { ExpressPeerServer } from 'peer';
 
 dotenv.config({ path: '.env.local' });
 
 const app = express();
 const httpServer = createServer(app);
+
+
+const peerServer = ExpressPeerServer(httpServer, {
+	path: "/myapp",
+});
+
+app.use("/peerjs", peerServer);
+
 const io = new Server(httpServer, {
   cors: {
     origin: process.env.ORIGIN,

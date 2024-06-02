@@ -17,7 +17,6 @@ export default function Room() {
     const { stream } = useMediastream()
     const { peer, myId } = usePeer()
     const { players, setPlayers, playerHighlighted, nonHighlighted, toggleAudio, toggleVideo,leaveRoom } = usePlayer(myId, roomId,peer,socket)
-
     useEffect(() => {
         if (!socket || !peer || !stream) { return; }
 

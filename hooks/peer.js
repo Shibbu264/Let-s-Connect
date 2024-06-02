@@ -2,6 +2,7 @@
 
 import { useSocket } from "@/context/socket"
 import { useRouter } from "next/router"
+import Peer from "peerjs"
 import { useState, useEffect, useRef } from 'react'
 
 const usePeer = ()=>{
@@ -18,16 +19,21 @@ useEffect(()=>{
     
    
     
-    (async function initpeer(){
-const myPeer = new (await import('peerjs')).default()
+   
+        if(window !== undefined){
+const myPeer = new Peer({
+    host: 'localhost',
+    port: 5000,
+    path: 'peerjs/myapp',
+  });
 setPeer(myPeer)
 myPeer.on('open',(id)=>{
     socket?.emit('join-room',roomId,id)
     setMyId(id)})
 
     
-    })()
-  
+    }
+
 },[roomId,socket])
 
 return {

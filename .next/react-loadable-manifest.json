@@ -1,10 +1,4 @@
 {
-  "..\\hooks\\peer.js -> peerjs": {
-    "id": "..\\hooks\\peer.js -> peerjs",
-    "files": [
-      "static/chunks/node_modules_peerjs_dist_bundler_mjs.js"
-    ]
-  },
   "..\\node_modules\\react-player\\lib\\ReactPlayer.js -> ./Preview": {
     "id": "..\\node_modules\\react-player\\lib\\ReactPlayer.js -> ./Preview",
     "files": [
