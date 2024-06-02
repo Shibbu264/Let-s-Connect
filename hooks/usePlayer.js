@@ -27,6 +27,7 @@ const leaveRoom = () => {
     socket?.emit('user-leave-video', myId, roomId)
     console.log("leaving room", roomId)
     peer?.disconnect()
+    localStorage.clear()
     router.push('/')
 }
 

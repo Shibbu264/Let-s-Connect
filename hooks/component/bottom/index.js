@@ -27,7 +27,9 @@ const Bottom = (props) => {
         />
       )}
       <PhoneOff size={55} className={cx(styles.icon)} onClick={leaveRoom}/>
-      <CopyIcon size={55} className={cx(styles.icon)}  onClick={()=>{  navigator.clipboard.writeText(window.location.href)}}/>
+      <CopyIcon size={55} className={cx(styles.icon)}  onClick={()=>{ 
+
+        navigator.clipboard.writeText((window.location.pathname).slice(1))}}/>
     </div>
   );
 };
