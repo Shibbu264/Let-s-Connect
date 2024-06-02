@@ -20,7 +20,7 @@ useEffect(()=>{
    
     
    
-        if(window !== undefined){
+        if(typeof window !== undefined){
 const myPeer = new Peer({
     host: process.env.NEXT_PUBLIC_HOST,
     port: process.env.NEXT_PUBLIC_PORT,
