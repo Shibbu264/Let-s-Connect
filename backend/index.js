@@ -53,7 +53,7 @@ socket.broadcast.to(roomID).emit('user-connected',id)
     
 
 })
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 httpServer.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
